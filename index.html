@@ -8,24 +8,19 @@
 </head>
 <body>
     <div id="app">
-        <h1 v-once>{{title}}</h1><!--All the content inside this element will only ne redered once. it doesn't change if it is overiden in the vue element-->
-        <p>{{sayHello()}} - <a v-bind:href="link">Google</a></p>
-        <p>{{finishedLink}}</p>
-        <p v-html="finishedLink"></p>
+        <button v-on:click="increased">Click me</button>
+        <p>{{ counter }}</p>
     </div>
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                title:"Hello Word!",
-                link: "https://google.com",
-                finishedLink: '<a href="https://google.com">Google</a>'
+                counter:0
             },
             methods: {
-                sayHello: function(){
-                    this.title = 'Hello!';// it renders each time if it is changed.
-                    return this.title;
+                increased: function(){
+                    this.counter++;
                 }
             }
         });

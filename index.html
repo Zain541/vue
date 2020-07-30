@@ -8,13 +8,13 @@
 </head>
 <body>
     <div id="app">
-       <p v-if="show">You can see me!</p>
+       <p v-if="show">You can see me!</p><!--It remove the element entirely-->
        <p v-else>Now you can see me!</p>
        <template v-if="show">
            <h1>Heading</h1>
            <p>Inside a template</p>
        </template>
-       <p>Do you can see me?</p>
+       <p v-show="show">Do you can see me?</p><!--It hides the element but doesn't remove it-->
        <button @click="show = !show">Switch</button>
     </div>
 

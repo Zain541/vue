@@ -8,21 +8,20 @@
 </head>
 <body>
     <div id="app">
-       <p v-if="show">You can see me!</p><!--It remove the element entirely-->
-       <p v-else>Now you can see me!</p>
-       <template v-if="show">
-           <h1>Heading</h1>
-           <p>Inside a template</p>
-       </template>
-       <p v-show="show">Do you can see me?</p><!--It hides the element but doesn't remove it-->
-       <button @click="show = !show">Switch</button>
+       <ul>
+           <li v-for="ingredient in ingredients">{{ ingredient }}</li>
+       </ul>
     </div>
 
     <script>
         new Vue({
             el: '#app',
             data: {
-                show: true
+                ingredients: ['meat', 'fruit', 'cookies'],
+                persons: [
+                    {name: "Max", age: 27, color: "red"},
+                    {name: "Zain", age: 26, color: "blue"},
+                ]
             }
         });
     </script>

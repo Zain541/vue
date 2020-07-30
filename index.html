@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue JS</title>
     <script src="vue.js"></script>
+    <style>
+        .loop-values{
+            display: inline-block;
+            width: 45px;
+        }
+    </style>
 </head>
 <body>
     <div id="app">
@@ -15,6 +21,21 @@
            <h1>{{ ingredient }}</h1>
            <p>{{ index }}</p>
        </template>
+       <hr>
+       <ul>
+           <li v-for="person in persons">
+               {{  person.name }}
+           </li>
+       </ul>
+       <ul>
+        <li v-for="person in persons">
+                <div v-for="(value, key, index) in person">
+                    <span class="loop-values"><b>{{ key }}:</b></span>
+                     <span class="loop-values">{{ value }}</span>
+                     <span class="loop-values">({{ index }})</span>
+                    </div>
+        </li>
+    </ul>
     </div>
 
     <script>
